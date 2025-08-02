@@ -15,9 +15,7 @@ Usage:
   python src/main.py --transport http --port 8001 # HTTP mode on port 8001
 
 Test with: 
-  mcp dev src/main.py                             # Test stdio mode
-  mcp dev --transport sse http://localhost:8000/sse  # Test SSE mode
-  mcp dev --transport http http://localhost:8001/mcp # Test HTTP mode
+  mcp dev src/main.py
 """
 
 import sys
@@ -511,7 +509,7 @@ async def run_sse_server(host: str, port: int, enable_cors: bool = False, timeou
     try:
         logger.info(f"Starting MCP server in SSE mode on {host}:{port}...")
         logger.info(f"SSE endpoint available at: http://{host}:{port}/sse")
-        logger.info(f"Use with: mcp dev --transport sse http://{host}:{port}/sse")
+        logger.info(f"Use with: mcp dev src.main.py")
         
         # Configure server settings
         mcp.settings.host = host
@@ -540,7 +538,7 @@ async def run_http_server(host: str, port: int, enable_cors: bool = False, timeo
         logger.info(f"Starting MCP server in HTTP mode on {host}:{port}...")
         logger.info(f"HTTP server ready at: http://{host}:{port}")
         logger.info(f"MCP endpoint: http://{host}:{port}/mcp")
-        logger.info(f"Use with: mcp dev --transport http http://{host}:{port}/mcp")
+        logger.info(f"Use with: mcp dev src.main.py")
         
         # Configure server settings
         mcp.settings.host = host
