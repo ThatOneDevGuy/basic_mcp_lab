@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "basic_mcp_lab"
+version = "0.1.0"
+description = ""
+authors = [
+    "Kunal Patel <kunal.patel@cerebras.net>",
+]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-dotenv = "*"
+mcp = "*"
+cerebras_cloud_sdk = "*"
+anthropic = "*"
+
+[tool.poetry.group.dev.dependencies]
+
+[tool.poetry.extras]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_default_fixture_loop_scope = "function"
+
