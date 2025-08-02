@@ -36,7 +36,7 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-mcp = FastMCP("ai-fuzz-tests")
+mcp = FastMCP("basic-mcp-lab")
 
 # Global clients
 cerebras_client = None
